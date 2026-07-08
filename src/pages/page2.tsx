@@ -9,7 +9,7 @@ function Page1() {
                 className="btn"
                 onClick={() => navigate("/page2")}
             >
-              Page2
+                Page3
             </button>
         </div>
     );
