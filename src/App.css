@@ -182,7 +182,6 @@
     border-right-color: var(--border);
   }
 }
-
 .container {
   display: flex;
   flex-direction: column; /* Stack h1 and button vertically */
@@ -197,35 +196,55 @@
   background-repeat: no-repeat;
 }
 
-.btn {
-  background-color: pink;
-  border: 2px solid green;
-  color: green;
-  padding: 20px 45px;
-  border-radius: 10px;
-  font-size: 30px;
-  cursor: pointer;
-  margin-top: 90px; /* Space below heading */
-}
-
-.btn:active {
-  transform: scale(0.95);
-}
-
 .h1 {
   color: white;
   font-size: 3rem;
   font-family: Georgia, serif;
   font-weight: bold;
   text-align: center;
-  letter-spacing: 2px;
   margin-top: 50px;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
+}
+
+.input-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.task-input {
+  width: 350px;
+  padding: 12px;
+  font-size: 18px;
+  border: 2px solid #90d38b;
+  border-radius: 10px;
+  outline: none;
+}
+
+.task-input:focus {
+  border-color: green;
+}
+
+.add-btn {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #90d38b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #6dbb67;
 }
 
 .task-container {
   width: 1000px;
-  max-height: 450px;
+
+  /* 8 rows visible */
+  height: 420px;
+
   overflow-y: auto;
 
   background: rgba(255, 255, 255, 0.9);
@@ -234,19 +253,19 @@
 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   border: 2px solid #b8e0b3;
-
-  margin-top: 20px;
 }
 
 .list {
   margin: 0;
-  padding-left: 25px;
+  padding-left: 28px;
 }
 
 .list li {
-  font-size: 18px;
+  font-size: 20px;
+  text-align: left;
   color: #2f5d3d;
-  padding: 10px 0;
+  padding: 12px 0;
+  min-height: 28px;
   border-bottom: 1px solid #d9ead3;
 }
 
@@ -254,7 +273,12 @@
   border-bottom: none;
 }
 
-/* Cute scrollbar */
+.empty-row {
+  color: transparent;
+}
+
+/* Scrollbar */
+
 .task-container::-webkit-scrollbar {
   width: 8px;
 }
@@ -266,5 +290,19 @@
 
 .task-container::-webkit-scrollbar-track {
   background: #eef8ec;
+}
+
+.btn {
+  background-color: pink;
+  border: 2px solid green;
+  color: green;
+  padding: 20px 45px;
   border-radius: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.btn:active {
+  transform: scale(0.95);
 }
