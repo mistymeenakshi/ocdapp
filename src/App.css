@@ -201,11 +201,11 @@
   background-color: pink;
   border: 2px solid green;
   color: green;
-  padding: 25px 60px;
+  padding: 20px 45px;
   border-radius: 10px;
   font-size: 30px;
   cursor: pointer;
-  margin-top: 40px; /* Space below heading */
+  margin-top: 90px; /* Space below heading */
 }
 
 .btn:active {
@@ -219,21 +219,52 @@
   font-weight: bold;
   text-align: center;
   letter-spacing: 2px;
-  margin-top: -100px;
-  margin-bottom: 0px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.task-container {
+  width: 1000px;
+  max-height: 450px;
+  overflow-y: auto;
+
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 20px 25px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 2px solid #b8e0b3;
+
+  margin-top: 20px;
 }
 
 .list {
-  color: white;
-  font-size: 1.5rem;
-  font-family: Georgia, serif;
-  margin-top: 100px;
-  align-items: left;
-  margin-left: -700px;
+  margin: 0;
+  padding-left: 25px;
 }
 
 .list li {
-  margin: 10px 0;
-  text-align: left;
-  align-items: left;
+  font-size: 18px;
+  color: #2f5d3d;
+  padding: 10px 0;
+  border-bottom: 1px solid #d9ead3;
+}
+
+.list li:last-child {
+  border-bottom: none;
+}
+
+/* Cute scrollbar */
+.task-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-container::-webkit-scrollbar-thumb {
+  background: #90d38b;
+  border-radius: 10px;
+}
+
+.task-container::-webkit-scrollbar-track {
+  background: #eef8ec;
+  border-radius: 10px;
 }
