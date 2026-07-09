@@ -1,162 +1,279 @@
-/* ========================= */
-/* General */
-/* ========================= */
+/* ========================================================= */
+/* GENERAL STYLING */
+/* ========================================================= */
 
+/* Targets the entire HTML document */
 html {
+
+  /* Makes scrolling between sections smooth instead of jumping instantly */
   scroll-behavior: smooth;
+
 }
 
+/* Styles the whole webpage body */
 body {
+
+  /* Removes the browser's default outer spacing */
   margin: 0;
+
+  /* Removes the browser's default inner spacing */
   padding: 0;
+
+  /* Sets the default font for the entire webpage */
   font-family: Arial, Helvetica, sans-serif;
+
 }
 
-/* ========================= */
-/* Main Container */
-/* ========================= */
 
+/* ========================================================= */
+/* MAIN CONTAINER */
+/* ========================================================= */
+
+/* This is the main wrapper that contains everything */
 .container {
+
+  /* Enables Flexbox layout */
   display: flex;
+
+  /* Arrange child elements vertically */
   flex-direction: column;
+
+  /* Center children vertically */
   justify-content: center;
+
+  /* Center children horizontally */
   align-items: center;
 
+  /* Make the container fill the entire browser screen */
   height: 100vh;
+
+  /* Background image */
   background-image: url("./assets/background.png");
+
+  /* Make image cover the entire container */
   background-size: cover;
+
+  /* Keep image centered */
   background-position: center;
+
+  /* Prevent image from repeating */
   background-repeat: no-repeat;
 
+  /* Play pageFade animation when page loads */
   animation: pageFade 1s ease;
 }
 
+
+/* Create a custom animation called pageFade */
 @keyframes pageFade {
+
+  /* Starting point */
   from {
+
+    /* Completely invisible */
     opacity: 0;
+
+    /* Slightly smaller */
     transform: scale(.95);
+
   }
+
+  /* Ending point */
   to {
+
+    /* Fully visible */
     opacity: 1;
+
+    /* Normal size */
     transform: scale(1);
+
   }
+
 }
 
-/* ========================= */
-/* Heading */
-/* ========================= */
+
+/* ========================================================= */
+/* HEADING */
+/* ========================================================= */
 
 .h1 {
+
+  /* Text color */
   color: white;
+
+  /* Font size */
   font-size: 3rem;
+
+  /* Font family */
   font-family: Georgia, serif;
+
+  /* Make text bold */
   font-weight: bold;
+
+  /* Center the heading */
   text-align: center;
 
+  /* Space above heading */
   margin-top: 50px;
+
+  /* Space below heading */
   margin-bottom: 35px;
 
+  /* Adds shadow behind text for better visibility */
   text-shadow: 2px 2px 8px rgba(0,0,0,.3);
 
+  /* Apply floating animation forever */
   animation: floating 3s ease-in-out infinite;
+
 }
 
+
+/* Floating animation */
 @keyframes floating {
 
+  /* Start position */
   0%{
     transform: translateY(0);
   }
 
+  /* Move upward */
   50%{
     transform: translateY(-8px);
   }
 
+  /* Return back */
   100%{
     transform: translateY(0);
   }
 
 }
 
-/* ========================= */
-/* Input */
-/* ========================= */
 
+/* ========================================================= */
+/* INPUT SECTION */
+/* ========================================================= */
+
+/* Container holding input and buttons */
 .input-container {
+
+  /* Arrange elements in one row */
   display: flex;
+
+  /* Space between items */
   gap: 12px;
+
+  /* Space below container */
   margin-bottom: 20px;
+
 }
 
+
+/* Input box */
 .task-input {
+
+  /* Width of textbox */
   width: 350px;
+
+  /* Inner spacing */
   padding: 12px;
 
+  /* Text size */
   font-size: 18px;
 
+  /* Green border */
   border: 2px solid #90d38b;
+
+  /* Rounded corners */
   border-radius: 10px;
 
+  /* Remove browser's default blue outline */
   outline: none;
 
+  /* Smooth animation when properties change */
   transition: .35s;
+
 }
 
+
+/* When user clicks inside textbox */
 .task-input:focus {
 
+  /* Slightly enlarge textbox */
   transform: scale(1.03);
 
+  /* Darker green border */
   border-color: green;
 
+  /* Green glow */
   box-shadow: 0 0 15px rgba(144,211,139,.8);
 
 }
 
-/* ========================= */
-/* Buttons */
-/* ========================= */
+
+/* ========================================================= */
+/* BUTTONS */
+/* ========================================================= */
 
 .add-btn {
 
+  /* Internal spacing */
   padding: 12px 24px;
 
+  /* Text size */
   font-size: 18px;
 
+  /* Green gradient background */
   background: linear-gradient(135deg,#90d38b,#6dbb67);
 
+  /* White text */
   color: white;
 
+  /* Remove default border */
   border: none;
 
+  /* Rounded corners */
   border-radius: 10px;
 
+  /* Show hand cursor */
   cursor: pointer;
 
+  /* Smooth animation */
   transition: .3s;
 
 }
 
+
+/* Mouse hover effect */
 .add-btn:hover {
 
+  /* Lift button upward */
   transform: translateY(-3px) scale(1.05);
 
+  /* Add shadow */
   box-shadow: 0 10px 18px rgba(0,0,0,.2);
 
 }
 
+
+/* While mouse button is pressed */
 .add-btn:active {
 
+  /* Shrink button */
   transform: scale(.9);
 
 }
 
-/* Bounce when clicked */
 
+/* Button animation class added from React */
 .clicked{
 
+  /* Play bounce animation */
   animation:bounce .5s;
 
 }
 
+
+/* Bounce animation */
 @keyframes bounce{
 
   0%{
@@ -177,210 +294,285 @@ body {
 
 }
 
-/* ========================= */
-/* Radio Buttons */
-/* ========================= */
+
+/* ========================================================= */
+/* RADIO BUTTONS */
+/* ========================================================= */
 
 input[type="radio"]{
 
+  /* Change default radio button color */
   accent-color:#5ab95a;
 
+  /* Hand cursor */
   cursor:pointer;
 
+  /* Make radio slightly larger */
   transform:scale(1.2);
 
 }
 
-/* ========================= */
-/* Task Container */
-/* ========================= */
+
+/* ========================================================= */
+/* TASK CONTAINER */
+/* ========================================================= */
 
 .task-container {
 
+  /* Width */
   width:1000px;
 
+  /* Fixed height */
   height:420px;
 
+  /* Enable vertical scrolling */
   overflow-y:auto;
 
+  /* Slightly transparent white background */
   background:rgba(255,255,255,.92);
 
+  /* Rounded corners */
   border-radius:18px;
 
+  /* Internal spacing */
   padding:20px 25px;
 
+  /* Green border */
   border:2px solid #b8e0b3;
 
+  /* Shadow around box */
   box-shadow:0 8px 20px rgba(0,0,0,.15);
 
+  /* Smooth animation */
   transition:.4s;
 
 }
 
+
+/* Hover effect */
 .task-container:hover{
 
+  /* Lift box upward */
   transform:translateY(-5px);
 
+  /* Bigger shadow */
   box-shadow:0 15px 35px rgba(0,0,0,.25);
 
 }
 
-/* ========================= */
-/* List */
-/* ========================= */
+
+/* ========================================================= */
+/* LIST */
+/* ========================================================= */
 
 .list{
 
+  /* Remove top spacing */
   margin:0;
 
+  /* Space for bullets/numbers */
   padding-left:28px;
 
 }
 
+
+/* Every list item */
 .list li{
 
+  /* Text size */
   font-size:20px;
- text-align: left;
+
+  /* Align text left */
+  text-align:left;
+
+  /* Green text */
   color:#2f5d3d;
 
+  /* Vertical spacing */
   padding:12px 0;
 
+  /* Minimum row height */
   min-height:28px;
 
+  /* Bottom separator */
   border-bottom:1px solid #d9ead3;
 
+  /* Smooth animation */
   transition:.3s;
 
 }
 
+
+/* Remove border from last row */
 .list li:last-child{
 
   border-bottom:none;
 
 }
 
-/* New Task Animation */
 
+/* Animation for newly added task */
 .task-item{
 
   animation:slideUp .45s ease;
 
 }
 
+
+/* Slide animation */
 @keyframes slideUp{
 
   from{
 
+    /* Invisible */
     opacity:0;
 
+    /* Start lower */
     transform:translateY(25px);
 
   }
 
   to{
 
+    /* Visible */
     opacity:1;
 
+    /* Original position */
     transform:translateY(0);
 
   }
 
 }
 
-/* Hover */
 
+/* Mouse hover on each task */
 .list li:hover{
 
+  /* Light green background */
   background:#eaf9e7;
 
+  /* Move right */
   transform:translateX(12px);
 
+  /* Rounded edges */
   border-radius:10px;
 
+  /* Extra left spacing */
   padding-left:10px;
 
 }
 
+
+/* Empty rows become invisible */
 .empty-row{
 
   color:transparent;
 
 }
 
-/* ========================= */
-/* Scrollbar */
-/* ========================= */
 
+/* ========================================================= */
+/* CUSTOM SCROLLBAR */
+/* ========================================================= */
+
+/* Width of scrollbar */
 .task-container::-webkit-scrollbar{
 
   width:8px;
 
 }
 
+
+/* Scrollbar thumb */
 .task-container::-webkit-scrollbar-thumb{
 
+  /* Green color */
   background:#7bc77b;
 
+  /* Rounded scrollbar */
   border-radius:20px;
 
 }
 
+
+/* Thumb hover */
 .task-container::-webkit-scrollbar-thumb:hover{
 
   background:#5fb45f;
 
 }
 
+
+/* Scrollbar background */
 .task-container::-webkit-scrollbar-track{
 
   background:#eef8ec;
 
 }
 
-/* ========================= */
-/* Page Button */
-/* ========================= */
+
+/* ========================================================= */
+/* PAGE NAVIGATION BUTTON */
+/* ========================================================= */
 
 .btn{
 
+  /* Space above button */
   margin-top:40px;
 
+  /* Internal spacing */
   padding:20px 45px;
 
+  /* Text size */
   font-size:30px;
 
+  /* Rounded corners */
   border-radius:12px;
 
+  /* Green border */
   border:2px solid green;
 
+  /* Pink gradient */
   background:linear-gradient(135deg,#ffc5d5,#ff9dbd);
 
+  /* Text color */
   color:green;
 
+  /* Hand cursor */
   cursor:pointer;
 
+  /* Smooth animation */
   transition:.35s;
 
 }
 
+
+/* Hover effect */
 .btn:hover{
 
+  /* Lift button */
   transform:translateY(-6px) scale(1.05);
 
+  /* Bigger shadow */
   box-shadow:0 12px 22px rgba(0,0,0,.25);
 
 }
 
+
+/* Click effect */
 .btn:active{
 
+  /* Slight shrink */
   transform:scale(.93);
 
 }
 
-/* ========================= */
-/* Optional Pulse Animation */
-/* ========================= */
 
+/* ========================================================= */
+/* PULSE ANIMATION */
+/* ========================================================= */
+
+/* Creates expanding glowing circles */
 @keyframes pulse{
 
   0%{
@@ -403,8 +595,11 @@ input[type="radio"]{
 
 }
 
+
+/* Apply pulse animation only to the first Add button */
 .add-btn:first-child{
 
+  /* Repeat forever every 2 seconds */
   animation:pulse 2s infinite;
 
 }
